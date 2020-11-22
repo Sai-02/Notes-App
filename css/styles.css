@@ -4,7 +4,18 @@
   padding: 0;
   text-decoration: none;
 }
+/* body{
+  display: grid;
+  justify-content: center;
+} */
 
+/* @media screen and (min-width:600px){
+  .container{
+    width: 80vw;
+     display: grid;
+    justify-content: center;
+  }
+} */
 /* Navbar */
 
 .navbar {
@@ -13,6 +24,7 @@
   padding: 1rem;
   display: grid;
   margin-bottom: 1rem;
+  /* width: 100vw; */
 }
 .navbar-content-container {
   display: grid;
@@ -102,14 +114,46 @@ a {
   display: block;
   margin-bottom: 24px;
 }
-.add-note-btn {
+.note-btn {
   color: white;
   background: rgb(26, 115, 232);
   border: none;
   padding: 9px;
   border-radius: 3px;
 }
-.add-note-btn:hover {
+.note-btn:hover {
   cursor: pointer;
 }
 /* End of hero section */
+
+/* Notes section */
+.notes-section {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+.notes-section h1 {
+  font-weight: 500;
+}
+.notes-container {
+  padding: 1rem;
+  display: grid;
+  gap: 2rem;
+}
+@media screen and (min-width: 600px) {
+  .notes-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 992px) {
+  .notes-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.single-note {
+  padding: 1rem 2rem;
+  border: solid black 1px;
+  display: grid;
+  row-gap: 10px;
+}
+
+/* End of Notes Section */
