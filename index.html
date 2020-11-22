@@ -4,22 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./fontawesome/css/all.css" />
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
     <title>Notes App</title>
   </head>
   <body>
     <!-- Navbar -->
     <div class="navbar" id="navbar">
-      <div class="navbar-contents-container">
-        <div>
+      <div class="navbar-content-container">
+        <div class="start">
+          <span><i class="fas fa-bars"></i></span>
           <h2>Magic Notes</h2>
         </div>
-        <ul class="nav-list">
-          <li>Home</li>
-        </ul>
-        <div>
-          <input type="text" />
+
+        <div class="end">
+          <div class="input-container">
+            <input type="text" />
+          </div>
+          <div class="btn-container">
+            <button class="search-btn" id="search-btn">Search</button>
+          </div>
         </div>
-        <div><button class="search-btn" id="search-btn">Search</button></div>
       </div>
     </div>
 
