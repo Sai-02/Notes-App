@@ -1,5 +1,5 @@
 console.log("this is working");
-
+showNotes();
 // If user adds a note, add it to localStorage
 
 let addNoteBtn = document.getElementById("add-note-btn");
@@ -20,6 +20,7 @@ function AddNote(e) {
   showNotes();
 }
 
+// Function to show notes from local storage
 function showNotes() {
   let notes = localStorage.getItem("notes");
   if (notes == null) {
@@ -34,13 +35,29 @@ function showNotes() {
       <h3>Note ${index + 1}</h3>
       <p> ${element}</p>
       <div class="delete-note-btn-container">
-        <button class="delete-note-btn note-btn">Delete Node</button>
+        <button class="delete-note-btn note-btn" id="${index}" onclick="deleteNote(this.id)">Delete Note</button>
       </div>
     </div>
       `;
   });
   let notesContainer = document.getElementById("notes-container");
-  if (notes.length != 0) {
+  if (notesObj.length != 0) {
     notesContainer.innerHTML = html;
+  } else {
+    notesContainer.innerHTML = `No notes to show here`;
   }
+}
+
+// Function to delete note
+function deleteNote(index) {
+  console.log("I m deleting  " + index);
+  let notes = localStorage.getItem("notes");
+  if (notes == null) {
+    notesObj = [];
+  } else {
+    notesObj = JSON.parse(notes);
+  }
+  notesObj.splice(index, 1);
+  localStorage.setItem("notes", JSON.stringify(notesObj));
+  showNotes();
 }
