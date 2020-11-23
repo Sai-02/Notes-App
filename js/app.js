@@ -6,7 +6,6 @@ let addNoteBtn = document.getElementById("add-note-btn");
 addNoteBtn.addEventListener("click", AddNote);
 
 function AddNote(e) {
-  console.log("sda");
   let addTxt = document.getElementById("note-content");
   let notes = localStorage.getItem("notes");
   if (notes == null) {
@@ -50,7 +49,6 @@ function showNotes() {
 
 // Function to delete note
 function deleteNote(index) {
-  console.log("I m deleting  " + index);
   let notes = localStorage.getItem("notes");
   if (notes == null) {
     notesObj = [];
@@ -60,4 +58,21 @@ function deleteNote(index) {
   notesObj.splice(index, 1);
   localStorage.setItem("notes", JSON.stringify(notesObj));
   showNotes();
+}
+
+// Searching Functionality added
+let search = document.getElementById("search-text");
+search.addEventListener("input", func3);
+
+function func3() {
+  let inputValue = search.value.toLowerCase();
+  let allNotes = document.getElementsByClassName("single-note");
+  Array.from(allNotes).forEach(function (element) {
+    let noteTxt = element.getElementsByTagName("p")[0].innerText;
+    if (noteTxt.includes(inputValue)) {
+      element.style.display = "grid";
+    } else {
+      element.style.display = "none";
+    }
+  });
 }
