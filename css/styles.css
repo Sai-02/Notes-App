@@ -103,9 +103,7 @@ a {
   -webkit-box-shadow: -1px 4px 15px 1px rgba(0, 0, 0, 0.4);
   box-shadow: -1px 4px 15px 1px rgba(0, 0, 0, 0.4);
 }
-.sixty {
-  /* max-width: 70vw; */
-}
+
 .note-content {
   line-height: 5;
   width: 80%;
