@@ -106,7 +106,8 @@ a {
 
 .note-content {
   line-height: 5;
-  width: 80%;
+  width: 100%;
+
   margin-top: 10px;
   max-height: 9rem;
   display: block;
